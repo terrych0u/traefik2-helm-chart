@@ -38,7 +38,7 @@
         readinessProbe:
           httpGet:
             path: /ping
-            port: {{ .Values.ports.traefik.port }}
+            port: {{ .Values.ports.web.port }}
           failureThreshold: 1
           initialDelaySeconds: 10
           periodSeconds: 10
@@ -47,7 +47,7 @@
         livenessProbe:
           httpGet:
             path: /ping
-            port: {{ .Values.ports.traefik.port }}
+            port: {{ .Values.ports.web.port }}
           failureThreshold: 3
           initialDelaySeconds: 10
           periodSeconds: 10
